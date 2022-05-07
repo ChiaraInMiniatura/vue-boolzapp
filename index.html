@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <title>Boolzap</title>
 </head>
@@ -13,23 +14,121 @@
 
     <header>
       <div class="container d-flex wrap">
+
         <!-- menu-up -->
-        <div class="menu-up d-flex debug">
-          <div class="menu-sx-up debug">sx</div>
-          <div class="menu-dx-up debug">dx</div>
-        </div>
-        <!-- menu-sx-contatti -->
-        <div class="menu-sx debug">
-          <div class="dis-not debug h70 w100">dis-not</div>
-          <div class="cerca-cont debug h70 w100"> input cerca</div>
-          <div class="contatti debug w100">
-            lista contatti js
+        <div class="menu-up d-flex">
+
+          <div class="menu-sx-up d-flex wrap">
+
+            <div class="nome-utente d-flex wrap">
+              <div class="img-utente">
+                <img src="./img/avatar_io.jpg" alt="Sofia">
+              </div>
+              <span>Sofia</span>
+            </div>
+
+            <div class="imp-utente">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
           </div>
+
+          <div class="menu-dx-up d-flex wrap">
+
+            <div class="utente-attivo d-flex wrap">
+              <div class="img-utente">img</div>
+              <div class="nome-ut-attivo">
+                <p>nome/cambia</p>
+                <p>nome/cambia</p>
+              </div>
+            </div>
+
+            <div class="imp-menu-dx">
+              <div class="imp-utente">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- menu-sx-contatti -->
+
+        <div class="menu-sx">
+
+          <div class="dis-not d-flex wrap">
+            <div class="mute-box d-flex">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div>
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+          </div>
+
+          <div class="cerca-cont">
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input class="inp-cerca" type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+
+          <div class="contatti">
+
+            <div class="card-contatto d-flex wrap">
+              
+              <div class="d-flex wrap">
+                
+                 <div class="img-utente-chat">
+                  <img src="./img/avatar_1.jpg" alt="ciao">
+                </div>
+
+                <div class="nome-conttatto">
+                  <span>Michele</span>
+                  <p class="ultimo-mex">ultimo mex</p>
+                </div>
+
+              </div>
+
+              <div class="orario-ult-mex">
+                <span>12.00</span> 
+              </div>
+
+
+
+            </div>
+
+          </div>
+
         </div>
         <!-- menu-dx-chat -->
-        <div class="menu-dx d-flex wrap debug">
-          <div class="chat debug w100 h100">chat</div>
-          <div class="scr-mex debug w100 ">chat</div>
+        <div class="menu-dx d-flex wrap">
+
+          <div class="chat">
+            <div class="mex-inviato d-flex">
+             <div class="box-mex-inv">
+              <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea dolorum repudiandae recusandae! Tempora perspiciatis dignissimos omnis dicta distinctio nostrum voluptatibus vel dolore nam a, accusantium ratione enim nisi blanditiis recusandae.</span>
+              <p class="data-mex">10.20 15/12/2022</p>
+             </div>
+            </div>
+            <div class="mex-ricevuto d-flex">
+              <div class="box-mex-ric">
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nesciunt quos eos quae iure aspernatur expedita dolorum numquam cum? Pariatur beatae ullam totam amet, perspiciatis adipisci earum in reiciendis consequatur.</span>
+                <p class="data-mex">10.20 15/12/2022</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scr-mex w100 d-flex">
+            <i class="fa-regular fa-face-smile"></i>
+            <input class="inp-mex" type="text" placeholder="Scrivi messaggio">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+          
         </div>
       </div>
     </header>
