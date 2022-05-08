@@ -101,7 +101,8 @@ header{
   padding: 5px;
 }
 .contatti{
-  overflow: scroll;
+  height: calc(100% - 120px);
+  overflow: auto;
 }
 .img-utente-chat{
   width: 50px;
@@ -112,6 +113,12 @@ header{
   justify-content: space-between;
   padding: 5px;
   border: 1px solid rgba(182, 185, 192, 0.514);
+}
+.card-contatto:hover{
+  background-color: rgb(233, 235, 234);
+}
+.card-contatto .active{
+  background-color:rgb(182, 183, 183);
 }
 .ultimo-mex, .orario-ult-mex{
   color: rgb(182, 185, 192);

@@ -38,10 +38,11 @@
           <div class="menu-dx-up d-flex wrap">
 
             <div class="utente-attivo d-flex wrap">
-              <div class="img-utente">img</div>
+              <div class="img-utente">
+                <img :src="`img/avatar_${contatore +1}.JPG`" alt="">
+              </div>
               <div class="nome-ut-attivo">
-                <p>nome/cambia</p>
-                <p>nome/cambia</p>
+                <p>{{contatti[contatore].name}}</p>
               </div>
             </div>
 
@@ -79,23 +80,26 @@
 
           <div class="contatti">
 
-            <div class="card-contatto d-flex wrap">
+            <div
+             @click="profAttivo(index)"  
+             v-for="(user, index) in contatti"
+             class="card-contatto d-flex wrap">
               
-              <div class="d-flex wrap">
+              <div class="d-flex wrap" >
                 
                  <div class="img-utente-chat">
-                  <img src="./img/avatar_1.jpg" alt="ciao">
+                  <img :src="imgInd(index)" :alt="user.name">
                 </div>
 
                 <div class="nome-conttatto">
-                  <span>Michele</span>
-                  <p class="ultimo-mex">ultimo mex</p>
+                  <span>{{user.name}}</span>
+                  <p class="ultimo-mex">{{user.messages[user.messages.length - 1].message}}</p>
                 </div>
 
               </div>
 
               <div class="orario-ult-mex">
-                <span>12.00</span> 
+                <span>{{user.messages[user.messages.length - 1].date}}</span> 
               </div>
 
 
