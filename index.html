@@ -24,6 +24,7 @@
         <!-- menu-up -->
         <div class="menu-up d-flex">
 
+          <!-- menu-up-sx -->
           <div class="menu-sx-up d-flex wrap">
 
             <div class="nome-utente d-flex wrap">
@@ -41,6 +42,7 @@
 
           </div>
 
+          <!-- menu-up-dx -->
           <div class="menu-dx-up d-flex wrap">
 
             <div class="utente-attivo d-flex wrap">
@@ -77,6 +79,7 @@
             </div>
           </div>
 
+          <!-- sezione cerca-contatti -->
           <div class="cerca-cont">
             <button>
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -86,12 +89,13 @@
             class="inp-cerca" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
 
+          <!-- sezione contatti (con v-for) -->
           <div class="contatti">
 
             <div
              @click="profAttivo(index)"  
              v-for="(user, index) in contatti"
-             v-if="user.name.toLowerCase('').includes(cercaLettera)"
+             v-if="user.name.toLowerCase().includes(cercaLettera)"
              class="card-contatto d-flex wrap"
              :class="{'active': contatore === index}">
               
@@ -112,18 +116,17 @@
                 <span>{{user.messages[user.messages.length - 1].date}}</span> 
               </div>
 
-
-
             </div>
 
           </div>
 
         </div>
+
         <!-- menu-dx-chat -->
         <div class="menu-dx d-flex wrap">
 
+          <!-- sezione chat -->
           <div class="chat">
-
             
             <div  
               v-for="itemMess in contatti[contatore].messages"
@@ -137,6 +140,7 @@
 
           </div>
 
+          <!-- sezione scrivi messaggi -->
           <div class="scr-mex w100 d-flex">
             <i class="fa-regular fa-face-smile"></i>
             <input
@@ -152,9 +156,9 @@
 
   </div>
   
-
   <script src="./script.js"></script>
 </body>
 </html>
 
+<!-- v-if che non funziona -->
 <!-- v-if="itemMess.status === 'sent'" class="mess-jc-dx" -->

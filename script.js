@@ -214,9 +214,7 @@ methods:{
         setTimeout(() => this.contatti[this.contatore].messages.push(newRisp), 2000);
 
     },
-
  
 }
 
- 
 })
