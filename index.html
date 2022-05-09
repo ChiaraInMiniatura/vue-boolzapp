@@ -39,7 +39,7 @@
 
             <div class="utente-attivo d-flex wrap">
               <div class="img-utente">
-                <img :src="`img/avatar_${contatore +1}.JPG`" alt="">
+                <img :src="`img/avatar_${contatore +1}.JPG`" alt="profilo attivo">
               </div>
               <div class="nome-ut-attivo">
                 <p>{{contatti[contatore].name}}</p>
@@ -83,7 +83,8 @@
             <div
              @click="profAttivo(index)"  
              v-for="(user, index) in contatti"
-             class="card-contatto d-flex wrap">
+             class="card-contatto d-flex wrap"
+             :class="{'active': contatore === index}">
               
               <div class="d-flex wrap" >
                 
@@ -113,23 +114,24 @@
         <div class="menu-dx d-flex wrap">
 
           <div class="chat">
-            <div class="mex-inviato d-flex">
-             <div class="box-mex-inv">
-              <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea dolorum repudiandae recusandae! Tempora perspiciatis dignissimos omnis dicta distinctio nostrum voluptatibus vel dolore nam a, accusantium ratione enim nisi blanditiis recusandae.</span>
-              <p class="data-mex">10.20 15/12/2022</p>
-             </div>
-            </div>
-            <div class="mex-ricevuto d-flex">
-              <div class="box-mex-ric">
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, nesciunt quos eos quae iure aspernatur expedita dolorum numquam cum? Pariatur beatae ullam totam amet, perspiciatis adipisci earum in reiciendis consequatur.</span>
-                <p class="data-mex">10.20 15/12/2022</p>
+            <div  
+              v-for="itemMess in contatti[contatore].messages"
+              class="mess d-flex">
+              <div 
+                :class="itemMess.status">
+                  <span>{{itemMess.message}}</span>
+                  <p class="data-mex">{{itemMess.date}}</p>
               </div>
             </div>
+
           </div>
 
           <div class="scr-mex w100 d-flex">
             <i class="fa-regular fa-face-smile"></i>
-            <input class="inp-mex" type="text" placeholder="Scrivi messaggio">
+            <input
+              v-model.trim="newMessage" 
+              @keyup.enter="sendMessage()"
+              class="inp-mex" type="text" placeholder="Scrivi messaggio">
             <i class="fa-solid fa-microphone"></i>
           </div>
           

@@ -169,10 +169,11 @@ const app = new Vue({
     }
 ],
     contatore: 0,
+    newMessage :"",
 },
 
 methods:{
-    
+
     imgInd(index){
         return `img/avatar${this.contatti[index].avatar}.JPG`
     },
@@ -180,7 +181,34 @@ methods:{
     profAttivo(index){
         this.contatore = index;
     },
+    
+    sendMessage(){
 
+        const newMessPush = {
+            date: "xxx",
+            message: this.newMessage,
+            status: "sent",
+        }
+
+       this.contatti[this.contatore].messages.push(newMessPush);
+
+       this.newMessage = "";
+
+       this.rispAuto()
+
+    },
+        rispAuto(){
+
+        const newRisp = {
+            date:  "xxx",
+            message: 'OK!',
+            status: 'received'
+        }
+        setTimeout(() => this.contatti[this.contatore].messages.push(newRisp), 2000);
+
+    },
+
+ 
 }
 
  

@@ -117,8 +117,8 @@ header{
 .card-contatto:hover{
   background-color: rgb(233, 235, 234);
 }
-.card-contatto .active{
-  background-color:rgb(182, 183, 183);
+.card-contatto.active{
+  background-color:rgba(182, 183, 183, 0.507);
 }
 .ultimo-mex, .orario-ult-mex{
   color: rgb(182, 185, 192);
@@ -138,22 +138,27 @@ header{
   overflow: scroll;
 }
 
-.mex-inviato, .mex-ricevuto{
+.mess{
   align-items: center;
   margin: 10px 30px;
 }
 
-.mex-inviato{
+.mess-jc-dx{
   justify-content: end;
 }
 
-.box-mex-inv{
+.sent{
+  align-items: center;
+  margin: 10px 30px;
   background-color:rgb(213, 248, 186) ;
   padding: 20px;
   max-width: 70%;
   border-radius: 10px;
 }
-.box-mex-ric{
+
+.received{
+   align-items: center;
+  margin: 10px 30px;
   background-color:white ;
   padding: 20px;  
   max-width: 70%;
