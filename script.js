@@ -1,4 +1,9 @@
 
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+dayjs.extend(window.dayjs_plugin_relativeTime);
+
+dayjs.locale('it');
+
 const app = new Vue({
 
   el: "#app",
@@ -171,6 +176,7 @@ const app = new Vue({
     contatore: 0,
     newMessage :"",
     cercaLettera:'',
+    adesso: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 },
 
 methods:{
@@ -186,7 +192,7 @@ methods:{
     sendMessage(){
 
         const newMessPush = {
-            date: "xxx",
+            date: this.adesso,
             message: this.newMessage,
             status: "sent",
         }
@@ -201,7 +207,7 @@ methods:{
         rispAuto(){
 
         const newRisp = {
-            date:  "xxx",
+            date:  this.adesso,
             message: 'OK!',
             status: 'received'
         }
