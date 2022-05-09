@@ -170,6 +170,7 @@ const app = new Vue({
 ],
     contatore: 0,
     newMessage :"",
+    cercaLettera:'',
 },
 
 methods:{
